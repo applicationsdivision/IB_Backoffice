@@ -7,6 +7,7 @@ import com.backoffice.BackofficeInternetBanking.dao.UserRepository;
 import com.backoffice.BackofficeInternetBanking.dto.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import com.backoffice.BackofficeInternetBanking.exceptions.UserNotFoundException;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -39,12 +40,15 @@ public class UserController {
             User user = userRepository.findByUsername(username)
                     .orElseThrow(() -> new UserNotFoundException("User not found"));
             ResponseEntity<String> response = userService.authenticateUser(loginDto.getUsername(), loginDto.getPassword());
+            if(response.getStatusCode()== HttpStatus.UNAUTHORIZED){
 
+                return new ResponseEntity<String>("Invalid credentils",HttpStatus.UNAUTHORIZED );
+            }
             System.out.println("authenticate");
             return response;
         }
         catch (BadCredentialsException e) {
-           return new ResponseEntity<String>("Bad credentials", HttpStatus.BAD_REQUEST);
+           return new ResponseEntity<String>("Invalid credentials", HttpStatus.UNAUTHORIZED);
         }
     }
 
