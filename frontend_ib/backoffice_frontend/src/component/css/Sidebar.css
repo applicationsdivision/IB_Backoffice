@@ -1,0 +1,33 @@
+.sidebar {
+  background-color: #753918;
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  position: fixed;
+  top: 50px; /* Adjust for header height */
+  left: 0;
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  color: #A0781B;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+.sidebar ul li a:hover {
+  background-color: #A0781B;
+  color: white;
+}

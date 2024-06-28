@@ -1,0 +1,79 @@
+.users-container {
+  padding: 20px;
+}
+
+.register-button {
+  background-color: #A0781B;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.register-button:hover {
+  background-color: #8a6217;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #A0781B;
+  color: white;
+}
+
+.Modal {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  margin: 100px auto;
+  position: relative;
+}
+
+.Modal .form-group {
+  margin-bottom: 15px;
+}
+
+.Modal .form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.Modal .register-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+
+.close-button {
+  background-color: #ccc;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.close-button:hover {
+  background-color: #999;
+}

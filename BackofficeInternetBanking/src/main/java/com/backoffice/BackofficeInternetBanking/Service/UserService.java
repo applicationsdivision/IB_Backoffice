@@ -2,6 +2,7 @@ package com.backoffice.BackofficeInternetBanking.Service;
 
 
 
+import com.backoffice.BackofficeInternetBanking.Entity.User;
 import com.backoffice.BackofficeInternetBanking.dao.UserRepository;
 import com.backoffice.BackofficeInternetBanking.model.AuthenticationRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +12,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Optional;
+
 @Service
 public class UserService {
 
 
 
     private final String authUrl = "http://172.16.21.24:4045/ldap/api/v1/authentication";
+
+
 
     public ResponseEntity<String> authenticateUser(String username,String password){
         try {
@@ -35,5 +40,8 @@ public class UserService {
         }catch (HttpClientErrorException e){
             throw new BadCredentialsException("invalid credentials");
         }
+
     }
+
+
 }
